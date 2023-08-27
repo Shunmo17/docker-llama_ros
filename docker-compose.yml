@@ -1,0 +1,24 @@
+version: "2.3"
+services:
+  llama:
+    build:
+      context: .
+      args:
+        BASE_IMAGE: ghcr.io/shunmo17/ros1:noetic-cuda11.7-pytorch2.0.0
+      dockerfile: Dockerfile
+    image: ghcr.io/shunmo17/llama:noetic-cuda11.7-pytorch2.0.0
+    container_name: llama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [ gpu ]
+    volumes:
+      - ./workspace:/home/user/workspace
+    user: user
+    working_dir: /home/user/workspace
+    network_mode: host
+    stdin_open: true
+    tty: true
