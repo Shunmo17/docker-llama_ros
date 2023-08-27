@@ -1,13 +1,13 @@
 version: "2.3"
 services:
-  llama:
+  llama_ros:
     build:
       context: .
       args:
         BASE_IMAGE: ghcr.io/shunmo17/ros1:noetic-cuda11.7-pytorch2.0.0
       dockerfile: Dockerfile
-    image: ghcr.io/shunmo17/llama:noetic-cuda11.7-pytorch2.0.0
-    container_name: llama
+    image: ghcr.io/shunmo17/docker-llama_ros:noetic-cuda11.7-pytorch2.0.0
+    container_name: llama_ros
     deploy:
       resources:
         reservations:
