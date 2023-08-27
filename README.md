@@ -7,7 +7,7 @@ This is docker image for llama with ROS1 Noetic.
 
 ### Setup workspace
 
-`workspace` will be mounted to the docker conatiner.
+`workspace` will be mounted to the docker container.
 
 ```
 mkdir -p workspace/src
